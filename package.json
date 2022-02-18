@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "sass": "^1.49.8"
+  },
+  "name": "portfolio2022",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorianlongepee/portfolio2022.git"
+  },
+  "author": "Dorian Longépée",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dorianlongepee/portfolio2022/issues"
+  },
+  "homepage": "https://github.com/dorianlongepee/portfolio2022#readme",
+  "description": ""
+}
