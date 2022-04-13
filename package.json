@@ -7,6 +7,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
+    "sass" : "sass --watch ./src/sass/main.scss ./public/style/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

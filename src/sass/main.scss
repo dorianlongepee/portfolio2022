@@ -1,0 +1,30 @@
+@import "utils/variables";
+@import "utils/placeholder";
+@import "utils/mixins";
+@import "utils/fonts";
+
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: none;
+    }
+
+body{
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: $light-color;
+}
+
+@import "layout/nav";
+@import "layout/header";
+@import "layout/hero";
+@import "layout/about";
+@import "layout/parcours";
+@import "layout/skills";
+@import "layout/portfolio";

@@ -1,3 +1,777 @@
+.about {
+  display: grid;
+  padding: 100px 50px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  column-gap: 20px;
+}
 
+.portfolio__dev__left h3, .portfolio__title, .parcours__title, .about__right-part__title, .hero__title h1 {
+  font-family: "Monument Extended";
+  font-weight: 900;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.about__right-part__paragraph {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #232323;
+}
+
+.about__right-part__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 18px;
+  background: linear-gradient(138.86deg, #7F92D5 14.46%, #BF7FD5 102.17%);
+  border-radius: 4px;
+  border: none;
+  width: fit-content;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FAFAFA;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: local("Monument Extended Black"), local("MonumentExtended-Black"), url("../../fonts/MonumentExtended-Black.woff2") format("woff2"), url("../../fonts/MonumentExtended-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monument Extended";
+  src: local("Monument Extended Regular"), local("MonumentExtended-Regular"), url("../../fonts/MonumentExtended-Regular.woff2") format("woff2"), url("../../fonts/MonumentExtended-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MADE Soulmaze";
+  src: local("MADE Soulmaze"), local("MADESoulmaze"), url("../../fonts/MADESoulmaze.woff2") format("woff2"), url("../../fonts/MADESoulmaze.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monument Extended";
+  src: local("Monument Extended Light"), local("MonumentExtended-Light"), url("../../fonts/MonumentExtended-Light.woff2") format("woff2"), url("../../fonts/MonumentExtended-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+}
+
+.aside-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  transform: translateX(100%);
+  height: 100vh;
+  background-color: #FAFAFA;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 50px 50px 100px;
+  overflow: hidden;
+}
+.aside-nav ul {
+  list-style: none;
+}
+.aside-nav ul li {
+  margin: 20px 0;
+  transform: translate(400px);
+}
+.aside-nav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-family: "MADE Soulmaze";
+  color: #232323;
+  font-size: 4rem;
+  cursor: pointer;
+}
+.aside-nav ul li a:hover, .aside-nav ul li a:focus, .aside-nav ul li a:active {
+  color: #232323;
+  transition: 0.1s;
+}
+.aside-nav ul li a:hover::after, .aside-nav ul li a:focus::after, .aside-nav ul li a:active::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  transform: translate(20px, 50%);
+  height: 20px;
+  width: 300%;
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+}
+.aside-nav .header__close {
+  align-self: end;
+}
+.aside-nav .creds-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+}
+.aside-nav .creds-nav__socials {
+  display: flex;
+  column-gap: 20px;
+}
+.aside-nav .creds-nav__socials svg:hover {
+  fill: green;
+}
+.aside-nav .creds-nav__copy {
+  font-family: "Monument Extended";
+  font-size: 0.75rem;
+  font-weight: 300;
+  position: relative;
+}
+.aside-nav .creds-nav__copy::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  bottom: -5px;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .aside-nav {
+    width: 100%;
+    left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .aside-nav {
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+  .aside-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .aside-nav ul li a {
+    position: relative;
+    font-size: 2.5rem;
+  }
+  .aside-nav ul li a:hover, .aside-nav ul li a:focus, .aside-nav ul li a:active {
+    color: #232323;
+    transition: 0.1s;
+  }
+  .aside-nav ul li a:hover::after, .aside-nav ul li a:focus::after, .aside-nav ul li a:active::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  }
+  .aside-nav .creds-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .aside-nav ul li a {
+    font-size: 2rem;
+  }
+
+  .creds-nav__copy p {
+    font-size: 0.65rem;
+  }
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FAFAFA;
+  z-index: 97;
+  transition: all 0.4s ease-out;
+}
+.header__logo {
+  font-family: "Monument Extended";
+  font-weight: normal;
+}
+.header__hamburger {
+  width: 40px;
+  min-height: 30px;
+  max-height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+.header__hamburger__line {
+  position: absolute;
+  height: 5px;
+  width: 40px;
+  background-color: #FAFAFA;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header__hamburger__line::after, .header__hamburger__line::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #FAFAFA;
+}
+.header__hamburger__line::before {
+  top: -10px;
+}
+.header__hamburger__line::after {
+  bottom: -10px;
+}
+.header__hamburger__line--dark {
+  background-color: #232323;
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+.header__hamburger__line--dark::before {
+  display: none;
+}
+.header__hamburger__line--dark::after {
+  background-color: #232323;
+  transform-origin: center;
+  bottom: auto;
+  transform: rotate(-90deg);
+}
+
+.anim-nav {
+  padding: 15px 50px;
+  background: #232323;
+  transition: all 0.4s ease-out;
+}
+.anim-nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  height: 2px;
+  width: 100%;
+  transform: translateX(-50px);
+  transition: all 0.4s ease-in-out;
+}
+
+.backdrop {
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #232323;
+  z-index: 98;
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: 0.6s ease-in-out;
+  }
+
+  .header.anim-nav {
+    gap: 10px;
+    transition: 0.6s ease-in-out;
+  }
+
+  .anim-nav::after {
+    transform: translate(0);
+  }
+}
+.hero {
+  background: linear-gradient(45deg, #515151, #232323);
+  color: #FAFAFA;
+  height: 900px;
+  max-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 75px;
+}
+.hero__title {
+  text-align: right;
+  width: max-content;
+}
+.hero__title h1 span {
+  font-weight: 300;
+}
+.hero__title__activity {
+  background-color: #FAFAFA;
+  color: #232323;
+  font-family: "Monument Extended";
+  font-weight: 300;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  padding: 10px 24px;
+  float: right;
+  margin: 1rem 0;
+}
+.hero__portrait__circle {
+  width: clamp(275px, 30vw, 600px);
+  height: clamp(275px, 30vw, 600px);
+  border-radius: 50%;
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  border: #FAFAFA 5px solid;
+}
+.hero__mouse {
+  position: absolute;
+  bottom: 40px;
+}
+.hero #wheel {
+  animation: scroll 5s infinite ease-in-out;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
+    height: 15px;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .hero__title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero__title__activity {
+    width: fit-content;
+    margin: 20px auto 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    clip-path: ellipse(150% 75% at 50% 25%);
+  }
+
+  .hero__title h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero__title__activity {
+    font-size: 0.9rem;
+  }
+
+  .hero__mouse {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .hero__title h1 {
+    font-size: 1.3rem;
+  }
+}
+.about {
+  max-width: 2000px;
+  margin: 70px auto;
+}
+.about__left-part {
+  grid-column: 2/6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about__left-part img {
+  border-radius: 8px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 420px;
+  box-shadow: 0px 10px 24px 10px rgba(0, 0, 0, 0.25);
+}
+.about__left-part::after {
+  content: url("../../../public/img/blob1.svg");
+  position: absolute;
+  z-index: -1;
+}
+.about__right-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 7/12;
+}
+.about__right-part__title {
+  color: #232323;
+  font-weight: 900;
+}
+.about__right-part__paragraph {
+  margin: 24px 0;
+}
+@media screen and (max-width: 1440px) {
+  .about__left-part {
+    grid-column: 1/6;
+  }
+
+  .about__right-part {
+    grid-column: 7/-1;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .about__left-part::after {
+    transform: scale(0.8);
+  }
+
+  .about__right-part {
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+  }
+  .about__right-part__paragraph {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 425px) {
+  .about__left-part::after {
+    transform: scale(0.6);
+  }
+
+  .about__right-part__paragraph {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.parcours {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 100px;
+}
+.parcours__title {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  margin-top: 63px;
+  flex-wrap: nowrap;
+  padding: 0 50px;
+}
+.timeline__child {
+  width: 350px;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+.timeline__child:first-of-type {
+  margin-left: 0;
+}
+.timeline__child:last-of-type {
+  margin-right: 0;
+}
+.timeline__child h3 {
+  font-size: 18px;
+  padding-top: 20px;
+  font-family: "Monument Extended";
+}
+.timeline__child h3 span {
+  font-weight: 300;
+}
+.timeline .circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+}
+.timeline .circle::after {
+  position: absolute;
+  content: "";
+  width: 50vw;
+  top: 50%;
+  height: 5px;
+  z-index: -1;
+  background-color: #232323;
+}
+.timeline .circle.first::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 5px;
+  width: 50vw;
+  z-index: -1;
+  background-color: #232323;
+}
+.timeline .circle.last::after {
+  display: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .timeline__child {
+    width: 320px;
+  }
+
+  .timeline__child h3 {
+    font-size: 15px;
+  }
+
+  .timeline .circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .timeline {
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .timeline__child {
+    flex-direction: row;
+    text-align: left;
+    gap: 10px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline__child,
+.timeline__child:last-of-type,
+.timeline__child:first-of-type {
+    margin: 0;
+    padding: 20px 20px;
+  }
+
+  .timeline h3 {
+    padding-top: 0;
+  }
+
+  .timeline .circle {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .circle::after,
+.circle::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .parcours__title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .timeline {
+    padding: 0 30px;
+  }
+
+  .timeline__child {
+    width: 100%;
+  }
+
+  .timeline h3 {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 375) {
+  .parcours__title {
+    font-size: 1.3rem;
+  }
+}
+.skills {
+  background-color: #232323;
+  clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+  padding: 100px 50px;
+}
+.skills__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+}
+.skills__container__items {
+  position: relative;
+  background-color: #FAFAFA;
+  margin: 45px 15px;
+  border-radius: 8px;
+  width: 400px;
+  height: 260px;
+  padding: 60px 20px 20px;
+  font-family: Inter;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 15px;
+  transition: all 0.4s ease-out;
+}
+.skills__container__items img:first-of-type {
+  position: absolute;
+  top: -10%;
+}
+.skills__container__items img:last-of-type {
+  position: absolute;
+  top: -20%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.skills__container__items__title {
+  font-family: "Monument Extended";
+  text-align: center;
+}
+.skills__container__items:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0px 4px 4px #a545ff);
+  transition: all 0.4s ease-out;
+}
+
+.portfolio {
+  padding: 50px 100px;
+}
+.portfolio__title {
+  text-align: center;
+}
+.portfolio__sections {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.portfolio__sections li {
+  position: relative;
+  font-family: "MADE Soulmaze";
+  font-size: 1.125rem;
+  color: #232323;
+  width: 400px;
+  cursor: pointer;
+}
+.portfolio__sections li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #232323;
+}
+.portfolio__sections li.active {
+  background: -webkit-linear-gradient(#7F92D5, #BF7FD5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.portfolio__sections li.active::after {
+  content: "";
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  height: 4px;
+  bottom: -6px;
+}
+.portfolio__dev {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.portfolio__dev__left {
+  max-width: 700px;
+  margin-right: auto;
+}
+.portfolio__dev__left h3 {
+  background: -webkit-linear-gradient(#7F92D5, #BF7FD5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.portfolio__dev__left p {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 22px 0;
+}
+.portfolio__dev__left__links {
+  display: flex;
+  justify-content: space-between;
+}
+.portfolio__dev__left__links a {
+  display: flex;
+  column-gap: 10px;
+  font-family: "MADE Soulmaze";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration-line: underline;
+  background: linear-gradient(138.86deg, #7F92D5 14.46%, #BF7FD5 102.17%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.portfolio__dev__photo {
+  width: 20rem;
+  height: 20rem;
+  background-color: red;
+}
 
 /*# sourceMappingURL=style.css.map */

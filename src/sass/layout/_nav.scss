@@ -1,0 +1,157 @@
+.aside-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    transform: translateX(100%);
+    height: 100vh;
+    background-color: $light-color;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 50px 50px 100px;
+    overflow: hidden;
+
+    & ul {
+        list-style: none;
+
+        & li{
+            margin: 20px 0;
+            transform: translate(400px);
+        }
+
+        & li a{
+            position: relative;
+            text-decoration: none;
+
+            font-family: 'MADE Soulmaze';
+            color: $dark-color;
+            font-size: 4rem;
+            cursor: pointer;
+
+
+
+            &:hover,
+            &:focus,
+            &:active{
+                color: $dark-color;
+                transition: .1s;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 50%;
+                    transform: translate(20px, 50%);
+                    height: 20px;
+                    width: 300%;
+                    @include linear-gradient($primary-color, $secondary-color)
+                }
+            }
+
+        }
+    }
+
+    .header__close{
+        align-self: end;
+    }
+
+
+
+    & .creds-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        transform: translateY(100px);
+        opacity: 0;
+        visibility: hidden;
+
+        &__socials {
+            display: flex;
+            column-gap: 20px;
+
+            & svg:hover{
+                fill: green;
+            }
+        }
+
+        &__copy{
+            font-family: 'Monument Extended';
+            font-size: 0.75rem;
+            font-weight: 300;
+            position: relative;
+
+            &::after{
+                content: "";
+                position: absolute;
+                height: 5px;
+                width: 100%;
+                @include linear-gradient($primary-color, $secondary-color);
+                bottom: -5px;
+                left: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px){
+    .aside-nav{
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media screen and (max-width:768px){
+    .aside-nav{
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+
+        & ul li{
+            width: 100%;
+            text-align: center;
+
+            & a {
+                position: relative;
+                font-size: 2.5rem;
+
+                &:hover,
+                &:focus,
+                &:active{
+                color: $dark-color;
+                transition: .1s;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    height: 20px;
+                    width: 100%;
+                    z-index: -1;
+                    @include linear-gradient($primary-color, $secondary-color)
+                }
+            }
+            }
+        }
+
+        & .creds-nav{
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+}
+
+@media screen and (max-width:425px){
+    .aside-nav ul li a{
+        font-size: 2rem;
+    }
+
+    .creds-nav__copy p{
+        font-size: 0.65rem;
+    }
+}

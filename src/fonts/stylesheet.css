@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Monument Extended';
+    src: local('Monument Extended Black'), local('MonumentExtended-Black'),
+        url('MonumentExtended-Black.woff2') format('woff2'),
+        url('MonumentExtended-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: local('Monument Extended Regular'), local('MonumentExtended-Regular'),
+        url('MonumentExtended-Regular.woff2') format('woff2'),
+        url('MonumentExtended-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MADE Soulmaze';
+    src: local('MADE Soulmaze'), local('MADESoulmaze'),
+        url('MADESoulmaze.woff2') format('woff2'),
+        url('MADESoulmaze.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: local('Monument Extended Light'), local('MonumentExtended-Light'),
+        url('MonumentExtended-Light.woff2') format('woff2'),
+        url('MonumentExtended-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
