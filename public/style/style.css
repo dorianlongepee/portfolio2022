@@ -6,13 +6,13 @@
   column-gap: 20px;
 }
 
-.portfolio__dev__left h3, .portfolio__title, .parcours__title, .about__right-part__title, .hero__title h1 {
+.footer__right__head h3, footer h2, .portfolio__dev__left h3, .portfolio__title, .parcours__title, .about__right-part__title, .hero__title h1 {
   font-family: "Monument Extended";
   font-weight: 900;
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(2.5rem, 3vw, 3rem);
 }
 
-.about__right-part__paragraph {
+.footer__right p, .about__right-part__paragraph {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -22,7 +22,7 @@
   color: #232323;
 }
 
-.about__right-part__btn {
+form input[type=submit], footer button, .about__right-part__btn {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -686,6 +686,8 @@ body {
 
 .portfolio {
   padding: 50px 100px;
+  max-width: 1500px;
+  margin: 50px auto 100px auto;
 }
 .portfolio__title {
   text-align: center;
@@ -696,6 +698,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+  margin: 10px 0 100px 0;
 }
 .portfolio__sections li {
   position: relative;
@@ -729,7 +732,8 @@ body {
 .portfolio__dev {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  column-gap: 50px;
 }
 .portfolio__dev__left {
   max-width: 700px;
@@ -761,17 +765,99 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  text-decoration-line: underline;
+  color: transparent;
   background: linear-gradient(138.86deg, #7F92D5 14.46%, #BF7FD5 102.17%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+}
+.portfolio__dev__left__arrows {
+  margin-top: 75px;
 }
 .portfolio__dev__photo {
-  width: 20rem;
-  height: 20rem;
+  position: relative;
+  width: 25em;
+  height: 25em;
   background-color: red;
+  box-shadow: 0px 10px 24px 10px rgba(0, 0, 0, 0.25);
+}
+.portfolio__dev__photo::after {
+  content: url("../img/blob2.svg");
+  position: absolute;
+  z-index: -99;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow-left {
+  transform: rotate(180deg);
+  margin-right: 12px;
+}
+
+footer {
+  background: linear-gradient(45deg, #515151, #232323);
+  color: #FAFAFA;
+  padding: 50px 100px;
+}
+footer .footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1500px;
+  margin: 50px auto 100px auto;
+}
+footer .footer-main .footer__right {
+  max-width: 600px;
+}
+.footer__right__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.footer__right__head h3 {
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(#7F92D5, #BF7FD5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  display: inline-block;
+}
+
+.footer__right p {
+  color: #FAFAFA;
+}
+
+form {
+  width: 90%;
+}
+form .floating {
+  position: relative;
+}
+form input[type=text], form input[type=tel], form textarea {
+  position: relative;
+  border: 2px solid #7F92D5;
+  background: transparent;
+  border-radius: 6px;
+  color: #FAFAFA;
+  padding: 10px;
+  font-family: "Inter";
+  margin: 10px 0;
+  width: 100%;
+}
+form label {
+  position: absolute;
+  font-family: Inter;
+  font-style: italic;
+  padding: 10px;
+  top: 10px;
+  left: 0;
+}
+form input:focus + label {
+  left: 200px;
 }
 
 /*# sourceMappingURL=style.css.map */

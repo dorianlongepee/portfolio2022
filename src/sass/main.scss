@@ -3,6 +3,7 @@
 @import "utils/mixins";
 @import "utils/fonts";
 
+
 *,
 ::after,
 ::before{
@@ -28,3 +29,4 @@ body{
 @import "layout/parcours";
 @import "layout/skills";
 @import "layout/portfolio";
+@import "layout/footer";

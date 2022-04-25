@@ -1,5 +1,7 @@
 .portfolio{
     padding: 50px 100px;
+    max-width: 1500px;
+    margin: 50px auto 100px auto;
 
     &__title{
         @extend %main-title;
@@ -12,6 +14,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
+        margin: 10px 0 100px 0;
 
         & li {
             position: relative;
@@ -51,7 +54,8 @@
     &__dev{
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
+        flex-wrap: wrap-reverse;
+        column-gap: 50px;
 
         &__left {
             max-width: 700px;
@@ -86,20 +90,43 @@
                     font-weight: 400;
                     font-size: 18px;
 
-                    text-decoration-line: underline;
+                    color: transparent;
                     background: linear-gradient(138.86deg, #7F92D5 14.46%, #BF7FD5 102.17%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
-                    text-fill-color: transparent;
                 }
+            }
+
+            &__arrows{
+                margin-top: 75px;
             }
         }
         
         &__photo{
-            width: 20rem;
-            height: 20rem;
+            position: relative;
+            width: 25em;
+            height: 25em;
             background-color: red;
+
+            box-shadow: 0px 10px 24px 10px rgba(0, 0, 0, 0.25);
+
+
+            &::after{
+                content: url("../img/blob2.svg");
+                position: absolute;
+                z-index: -99;
+                top: 50%;
+                left: 70%;
+                transform: translate(-50%,-50%);
+            }
         }
+
+        
     }
+}
+
+.arrow-left{
+    transform: rotate(180deg);
+    margin-right: 12px;
 }

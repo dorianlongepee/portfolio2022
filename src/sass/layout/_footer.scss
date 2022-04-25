@@ -1,0 +1,87 @@
+footer{
+    @include linear-gradient($lighter-color,$dark-color);
+    color: $light-color;
+    padding: 50px 100px;
+
+    & .footer-main{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        max-width: 1500px;
+        margin: 50px auto 100px auto;
+
+        & .footer__right{
+            max-width: 600px;
+        }
+    }
+
+    & h2 {
+        @extend %main-title;
+    }
+
+    & button {
+        @extend %btn;
+    }
+}
+
+.footer__right__head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+.footer__right__head h3{
+    @extend %main-title;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient($primary-color, $secondary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    display: inline-block;
+}
+
+.footer__right p{
+    @extend %paragraph;
+    color: $light-color;
+}
+
+form {
+    width: 90%;
+    .floating{
+        position: relative;
+    }
+
+    & input[type=text],
+    & input[type=tel],
+    & textarea{
+        position: relative;
+        border: 2px solid $primary-color;
+        background: transparent;
+        border-radius: 6px;
+        color: $light-color;
+        padding: 10px;
+        font-family: 'Inter';
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    & input[type=submit]{
+        @extend %btn;
+    }
+
+    & label{
+        position: absolute;
+        font-family: Inter;
+        font-style: italic;
+
+        padding: 10px;
+        top: 10px;
+        left: 0;
+    }
+
+    & input:focus + label{
+        left: 200px;
+    }
+}
