@@ -1,40 +1,46 @@
 @font-face {
     font-family: 'Monument Extended';
     src: local('Monument Extended Black'), local('MonumentExtended-Black'),
-        url('../../fonts/MonumentExtended-Black.woff2') format('woff2'),
-        url('../../fonts/MonumentExtended-Black.woff') format('woff');
+        url('/src/fonts/MonumentExtended-Black.woff2') format('woff2'),
+        url('/src/fonts/MonumentExtended-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Monument Extended';
     src: local('Monument Extended Regular'), local('MonumentExtended-Regular'),
-        url('../../fonts/MonumentExtended-Regular.woff2') format('woff2'),
-        url('../../fonts/MonumentExtended-Regular.woff') format('woff');
+        url('/src/fonts/MonumentExtended-Regular.woff2') format('woff2'),
+        url('/src/fonts/MonumentExtended-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'MADE Soulmaze';
     src: local('MADE Soulmaze'), local('MADESoulmaze'),
-        url('../../fonts/MADESoulmaze.woff2') format('woff2'),
-        url('../../fonts/MADESoulmaze.woff') format('woff');
+        url('/src/fonts/MADESoulmaze.woff2') format('woff2'),
+        url('/src/fonts/MADESoulmaze.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Monument Extended';
     src: local('Monument Extended Light'), local('MonumentExtended-Light'),
-        url('../../fonts/MonumentExtended-Light.woff2') format('woff2'),
-        url('../../fonts/MonumentExtended-Light.woff') format('woff');
+        url('/src/fonts/MonumentExtended-Light.woff2') format('woff2'),
+        url('/src/fonts/MonumentExtended-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('/src/fonts/Inter-Regular.ttf') format('ttf'),
+        url('/src/fonts/Inter-Regular.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
 

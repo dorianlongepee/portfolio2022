@@ -6,7 +6,7 @@
   column-gap: 20px;
 }
 
-.footer__right__head h3, footer h2, .portfolio__dev__left h3, .portfolio__title, .parcours__title, .about__right-part__title, .hero__title h1 {
+.footer__right__head h3, .footer h2, .portfolio__dev__left h3, .portfolio__title, .parcours__title, .about__right-part__title, .hero__title h1 {
   font-family: "Monument Extended";
   font-weight: 900;
   font-size: clamp(2.5rem, 3vw, 3rem);
@@ -22,7 +22,7 @@
   color: #232323;
 }
 
-form input[type=submit], footer button, .about__right-part__btn {
+form input[type=submit], .footer button, .about__right-part__btn {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -42,31 +42,33 @@ form input[type=submit], footer button, .about__right-part__btn {
 
 @font-face {
   font-family: "Monument Extended";
-  src: local("Monument Extended Black"), local("MonumentExtended-Black"), url("../../fonts/MonumentExtended-Black.woff2") format("woff2"), url("../../fonts/MonumentExtended-Black.woff") format("woff");
+  src: local("Monument Extended Black"), local("MonumentExtended-Black"), url("/src/fonts/MonumentExtended-Black.woff2") format("woff2"), url("/src/fonts/MonumentExtended-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "Monument Extended";
-  src: local("Monument Extended Regular"), local("MonumentExtended-Regular"), url("../../fonts/MonumentExtended-Regular.woff2") format("woff2"), url("../../fonts/MonumentExtended-Regular.woff") format("woff");
+  src: local("Monument Extended Regular"), local("MonumentExtended-Regular"), url("/src/fonts/MonumentExtended-Regular.woff2") format("woff2"), url("/src/fonts/MonumentExtended-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "MADE Soulmaze";
-  src: local("MADE Soulmaze"), local("MADESoulmaze"), url("../../fonts/MADESoulmaze.woff2") format("woff2"), url("../../fonts/MADESoulmaze.woff") format("woff");
+  src: local("MADE Soulmaze"), local("MADESoulmaze"), url("/src/fonts/MADESoulmaze.woff2") format("woff2"), url("/src/fonts/MADESoulmaze.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "Monument Extended";
-  src: local("Monument Extended Light"), local("MonumentExtended-Light"), url("../../fonts/MonumentExtended-Light.woff2") format("woff2"), url("../../fonts/MonumentExtended-Light.woff") format("woff");
+  src: local("Monument Extended Light"), local("MonumentExtended-Light"), url("/src/fonts/MonumentExtended-Light.woff2") format("woff2"), url("/src/fonts/MonumentExtended-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter Regular"), local("Inter-Regular"), url("/src/fonts/Inter-Regular.ttf") format("ttf"), url("/src/fonts/Inter-Regular.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
 }
 *,
 ::after,
@@ -746,7 +748,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .portfolio__dev__left p {
-  font-family: Inter;
+  font-family: "Inter-Regular";
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
@@ -789,27 +791,73 @@ body {
   left: 70%;
   transform: translate(-50%, -50%);
 }
+.portfolio__dev__photo img {
+  opacity: 0;
+  transition: 0.6s opacity ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  padding: 16px 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+.portfolio__dev__photo img:first-child {
+  transform: translateY(-50%) rotate(180deg);
+}
+.portfolio__dev__photo img:last-child {
+  right: 0;
+}
+.portfolio__dev__photo:hover img {
+  opacity: 1;
+  transition: 0.2s opacity ease-in-out;
+}
 
 .arrow-left {
   transform: rotate(180deg);
   margin-right: 12px;
 }
 
-footer {
+.footer {
   background: linear-gradient(45deg, #515151, #232323);
   color: #FAFAFA;
-  padding: 50px 100px;
+  padding: 0 100px;
 }
-footer .footer-main {
+.footer .footer-main {
   display: flex;
   align-items: center;
   justify-content: space-around;
   max-width: 1500px;
-  margin: 50px auto 100px auto;
+  padding: 100px 0;
+  margin: auto;
 }
-footer .footer-main .footer__right {
+.footer .footer-main .footer__right {
   max-width: 600px;
 }
+.footer__creds {
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__creds__socials {
+  display: flex;
+  gap: 20px;
+}
+.footer__creds p {
+  font-family: Monument Extended;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+.footer hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+}
+
 .footer__right__head {
   display: flex;
   justify-content: space-between;
@@ -847,17 +895,23 @@ form input[type=text], form input[type=tel], form textarea {
   font-family: "Inter";
   margin: 10px 0;
   width: 100%;
+  transition: 1 all ease-out;
 }
 form label {
   position: absolute;
-  font-family: Inter;
+  font-family: "Inter";
   font-style: italic;
   padding: 10px;
   top: 10px;
-  left: 0;
+  left: -100px;
+  text-align: right;
+  width: 100px;
 }
-form input:focus + label {
-  left: 200px;
+form input:focus,
+form textarea:focus {
+  border-color: #BF7FD5;
+  transition: 1 all ease-out;
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */

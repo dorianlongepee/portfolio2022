@@ -69,7 +69,7 @@
             }
 
             & p {
-                font-family: Inter;
+                font-family: 'Inter-Regular';
                 font-size: 18px;
                 font-weight: 400;
                 line-height: 32px;
@@ -120,7 +120,33 @@
                 left: 70%;
                 transform: translate(-50%,-50%);
             }
+
+            & img{
+                opacity: 0;
+                transition: .6s opacity ease-in-out;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                @include linear-gradient($primary-color,$secondary-color);
+                padding: 16px 8px;
+                margin: 10px;
+                cursor: pointer;
+                &:first-child{
+                    transform:translateY(-50%) rotate(180deg);
+                }
+
+                &:last-child{
+                    right: 0;
+                }
+            }
+
+            &:hover img{
+                opacity: 1;
+                transition: .2s opacity ease-in-out;
+            }
+
         }
+        
 
         
     }
