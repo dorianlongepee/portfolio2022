@@ -1,160 +1,157 @@
-.parcours{
-    width: 100%;
-    height: fit-content;
-    position: relative;
-    margin-bottom: 100px;
-    &__title{
-        @extend %main-title;
-        text-align: center;
-        padding: 0 20px;
-    } 
+.parcours {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 100px;
+  &__title {
+    @extend %main-title;
+    text-align: center;
+    padding: 0 20px;
+  }
 }
 
-.timeline{
+.timeline {
+  display: flex;
+  justify-content: center;
+  margin-top: 63px;
+  flex-wrap: nowrap;
+  padding: 0 50px;
+
+  &__child {
+    width: 350px;
+    margin: 0 50px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    & h3 {
+      font-size: 18px;
+      padding-top: 20px;
+      font-family: "Monument Extended";
+
+      & span {
+        font-weight: 300;
+      }
+    }
+  }
+
+  & .circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    @include linear-gradient($primary-color, $secondary-color);
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 50vw;
+      top: 50%;
+      height: 5px;
+      z-index: -1;
+      background-color: $dark-color;
+    }
+
+    &.first::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      height: 5px;
+      width: 50vw;
+      z-index: -1;
+      background-color: $dark-color;
+    }
+
+    &.last::after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .timeline__child {
+    width: 320px;
+  }
+  .timeline__child h3 {
+    font-size: 15px;
+  }
+
+  .timeline .circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .timeline {
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .timeline__child {
+    flex-direction: row;
+    text-align: left;
+    gap: 10px;
+    width: 400px;
+    align-items: center;
     justify-content: center;
-    margin-top: 63px;
-    flex-wrap: nowrap;
-    padding: 0 50px;
+  }
 
-    &__child{
-        width: 350px;
-        margin:0 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: center;
+  .timeline__child,
+  .timeline__child:last-of-type,
+  .timeline__child:first-of-type {
+    margin: 0;
+    padding: 20px 20px;
+  }
 
-        &:first-of-type{
-            margin-left: 0;
-        }
+  .timeline h3 {
+    padding-top: 0;
+  }
 
-        &:last-of-type{
-            margin-right: 0;
-        }
-
-        & h3{
-            font-size: 18px;
-            padding-top: 20px;
-            font-family: 'Monument Extended';
-
-            & span{
-                font-weight: 300;
-            }
-        }
-    }
-    
-
-    & .circle{
-        position: relative;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        
-        @include linear-gradient($primary-color, $secondary-color);
-
-        &::after{
-            position: absolute;
-            content:"";
-            width: 50vw;
-            top: 50%;
-            height: 5px;
-            z-index: -1;
-            background-color: $dark-color;
-        }
-        
-        &.first::before{
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 0;
-            height: 5px;
-            width: 50vw;
-            z-index: -1;
-            background-color: $dark-color;
-        }
-
-        &.last::after{
-            display: none;
-        }
-    }
+  .timeline .circle {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+  .circle::after,
+  .circle::before {
+    display: none;
+  }
 }
 
-@media screen and (max-width:1440px){
-    .timeline__child{
-        width: 320px;
-    }
-    .timeline__child h3{
-        font-size: 15px;
-    }
-
-    .timeline .circle{
-        width: 80px;
-        height: 80px;
-    }
+@media screen and (max-width: 768px) {
+  .parcours__title {
+    font-size: 1.7rem;
+  }
 }
 
-@media screen and (max-width:1024px) {
-
-    .timeline{
-        flex-wrap: wrap;
-        height: auto;
-        margin-top: 20px;
-    }
-    
-
-    .timeline__child{
-        flex-direction: row;
-        text-align: left;
-        gap: 10px;
-        width: 400px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .timeline__child,
-    .timeline__child:last-of-type,
-    .timeline__child:first-of-type{
-        margin: 0;
-        padding: 20px 20px;
-    }
-
-    .timeline h3{
-        padding-top: 0;
-    }
-
-    .timeline .circle{
-        width: 50px;
-        height: 50px;
-        flex-shrink: 0;
-    }
-    .circle::after,
-    .circle::before{
-        display: none;
-    }
+@media screen and (max-width: 425px) {
+  .timeline {
+    padding: 0 30px;
+  }
+  .timeline__child {
+    width: 100%;
+  }
+  .timeline h3 {
+    font-size: 13px;
+  }
 }
 
-@media screen and (max-width:768px) {
-    .parcours__title {
-        font-size: 1.7rem;
-    }
-}
-
-@media screen and (max-width:425px) {
-    .timeline{
-        padding: 0 30px;
-    }
-    .timeline__child{
-        width: 100%;
-    }
-    .timeline h3{
-        font-size: 13px;
-    }
-}
-
-@media screen and (max-width:375) {
-    .parcours__title {
-        font-size: 1.3rem;
-    }
+@media screen and (max-width: 375) {
+  .parcours__title {
+    font-size: 1.3rem;
+  }
 }

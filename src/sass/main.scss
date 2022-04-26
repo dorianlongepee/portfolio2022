@@ -3,23 +3,22 @@
 @import "utils/mixins";
 @import "utils/fonts";
 
-
 *,
 ::after,
-::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scrollbar-width: none;
-    }
+  scrollbar-width: none;
+}
 
-body{
-    overflow-y: auto;
-    overflow-x: hidden;
-    background-color: $light-color;
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $light-color;
 }
 
 @import "layout/nav";

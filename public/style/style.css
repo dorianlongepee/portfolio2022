@@ -6,13 +6,20 @@
   column-gap: 20px;
 }
 
-.footer__right__head h3, .footer h2, .portfolio__dev__left h3, .portfolio__title, .parcours__title, .about__right-part__title, .hero__title h1 {
+.footer__right__head h3,
+.footer h2,
+.portfolio__dev__left h3,
+.portfolio__title,
+.parcours__title,
+.about__right-part__title,
+.hero__title h1 {
   font-family: "Monument Extended";
   font-weight: 900;
   font-size: clamp(2.5rem, 3vw, 3rem);
 }
 
-.footer__right p, .about__right-part__paragraph {
+.footer__right p,
+.about__right-part__paragraph {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -22,12 +29,14 @@
   color: #232323;
 }
 
-form input[type=submit], .footer button, .about__right-part__btn {
+form input[type="submit"],
+.footer button,
+.about__right-part__btn {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 15px 18px;
-  background: linear-gradient(138.86deg, #7F92D5 14.46%, #BF7FD5 102.17%);
+  background: linear-gradient(138.86deg, #7f92d5 14.46%, #bf7fd5 102.17%);
   border-radius: 4px;
   border: none;
   width: fit-content;
@@ -36,37 +45,47 @@ form input[type=submit], .footer button, .about__right-part__btn {
   font-weight: 500;
   letter-spacing: 0em;
   text-align: center;
-  color: #FAFAFA;
+  color: #fafafa;
   cursor: pointer;
 }
 
 @font-face {
   font-family: "Monument Extended";
-  src: local("Monument Extended Black"), local("MonumentExtended-Black"), url("/src/fonts/MonumentExtended-Black.woff2") format("woff2"), url("/src/fonts/MonumentExtended-Black.woff") format("woff");
+  src: local("Monument Extended Black"), local("MonumentExtended-Black"),
+    url("/src/fonts/MonumentExtended-Black.woff2") format("woff2"),
+    url("/src/fonts/MonumentExtended-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Monument Extended";
-  src: local("Monument Extended Regular"), local("MonumentExtended-Regular"), url("/src/fonts/MonumentExtended-Regular.woff2") format("woff2"), url("/src/fonts/MonumentExtended-Regular.woff") format("woff");
+  src: local("Monument Extended Regular"), local("MonumentExtended-Regular"),
+    url("/src/fonts/MonumentExtended-Regular.woff2") format("woff2"),
+    url("/src/fonts/MonumentExtended-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "MADE Soulmaze";
-  src: local("MADE Soulmaze"), local("MADESoulmaze"), url("/src/fonts/MADESoulmaze.woff2") format("woff2"), url("/src/fonts/MADESoulmaze.woff") format("woff");
+  src: local("MADE Soulmaze"), local("MADESoulmaze"),
+    url("/src/fonts/MADESoulmaze.woff2") format("woff2"),
+    url("/src/fonts/MADESoulmaze.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Monument Extended";
-  src: local("Monument Extended Light"), local("MonumentExtended-Light"), url("/src/fonts/MonumentExtended-Light.woff2") format("woff2"), url("/src/fonts/MonumentExtended-Light.woff") format("woff");
+  src: local("Monument Extended Light"), local("MonumentExtended-Light"),
+    url("/src/fonts/MonumentExtended-Light.woff2") format("woff2"),
+    url("/src/fonts/MonumentExtended-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: local("Inter Regular"), local("Inter-Regular"), url("/src/fonts/Inter-Regular.ttf") format("ttf"), url("/src/fonts/Inter-Regular.ttf") format("ttf");
+  src: local("Inter Regular"), local("Inter-Regular"),
+    url("/src/fonts/Inter-Regular.ttf") format("ttf"),
+    url("/src/fonts/Inter-Regular.ttf") format("ttf");
   font-weight: 500;
   font-style: normal;
 }
@@ -85,7 +104,7 @@ html {
 body {
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .aside-nav {
@@ -95,7 +114,7 @@ body {
   width: 70%;
   transform: translateX(100%);
   height: 100vh;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   z-index: 99;
   display: flex;
   flex-direction: column;
@@ -119,18 +138,22 @@ body {
   font-size: 4rem;
   cursor: pointer;
 }
-.aside-nav ul li a:hover, .aside-nav ul li a:focus, .aside-nav ul li a:active {
+.aside-nav ul li a:hover,
+.aside-nav ul li a:focus,
+.aside-nav ul li a:active {
   color: #232323;
   transition: 0.1s;
 }
-.aside-nav ul li a:hover::after, .aside-nav ul li a:focus::after, .aside-nav ul li a:active::after {
+.aside-nav ul li a:hover::after,
+.aside-nav ul li a:focus::after,
+.aside-nav ul li a:active::after {
   content: "";
   position: absolute;
   bottom: 50%;
   transform: translate(20px, 50%);
   height: 20px;
   width: 300%;
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
 }
 .aside-nav .header__close {
   align-self: end;
@@ -163,7 +186,7 @@ body {
   position: absolute;
   height: 5px;
   width: 100%;
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
   bottom: -5px;
   left: 0;
 }
@@ -188,11 +211,15 @@ body {
     position: relative;
     font-size: 2.5rem;
   }
-  .aside-nav ul li a:hover, .aside-nav ul li a:focus, .aside-nav ul li a:active {
+  .aside-nav ul li a:hover,
+  .aside-nav ul li a:focus,
+  .aside-nav ul li a:active {
     color: #232323;
     transition: 0.1s;
   }
-  .aside-nav ul li a:hover::after, .aside-nav ul li a:focus::after, .aside-nav ul li a:active::after {
+  .aside-nav ul li a:hover::after,
+  .aside-nav ul li a:focus::after,
+  .aside-nav ul li a:active::after {
     content: "";
     position: absolute;
     bottom: 10px;
@@ -200,7 +227,7 @@ body {
     height: 20px;
     width: 100%;
     z-index: -1;
-    background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+    background: linear-gradient(45deg, #7f92d5, #bf7fd5);
   }
   .aside-nav .creds-nav {
     flex-direction: column;
@@ -225,7 +252,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #FAFAFA;
+  color: #fafafa;
   z-index: 97;
   transition: all 0.4s ease-out;
 }
@@ -244,16 +271,17 @@ body {
   position: absolute;
   height: 5px;
   width: 40px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   top: 50%;
   transform: translateY(-50%);
 }
-.header__hamburger__line::after, .header__hamburger__line::before {
+.header__hamburger__line::after,
+.header__hamburger__line::before {
   content: "";
   position: absolute;
   height: 5px;
   width: 100%;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .header__hamburger__line::before {
   top: -10px;
@@ -285,7 +313,7 @@ body {
   content: "";
   position: absolute;
   bottom: 0;
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
   height: 2px;
   width: 100%;
   transform: translateX(-50px);
@@ -322,7 +350,7 @@ body {
 }
 .hero {
   background: linear-gradient(45deg, #515151, #232323);
-  color: #FAFAFA;
+  color: #fafafa;
   height: 900px;
   max-height: 100vh;
   width: 100%;
@@ -341,7 +369,7 @@ body {
   font-weight: 300;
 }
 .hero__title__activity {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #232323;
   font-family: "Monument Extended";
   font-weight: 300;
@@ -354,8 +382,8 @@ body {
   width: clamp(275px, 30vw, 600px);
   height: clamp(275px, 30vw, 600px);
   border-radius: 50%;
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
-  border: #FAFAFA 5px solid;
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
+  border: #fafafa 5px solid;
 }
 .hero__mouse {
   position: absolute;
@@ -534,7 +562,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
 }
 .timeline .circle::after {
   position: absolute;
@@ -590,8 +618,8 @@ body {
   }
 
   .timeline__child,
-.timeline__child:last-of-type,
-.timeline__child:first-of-type {
+  .timeline__child:last-of-type,
+  .timeline__child:first-of-type {
     margin: 0;
     padding: 20px 20px;
   }
@@ -607,7 +635,7 @@ body {
   }
 
   .circle::after,
-.circle::before {
+  .circle::before {
     display: none;
   }
 }
@@ -649,7 +677,7 @@ body {
 }
 .skills__container__items {
   position: relative;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   margin: 45px 15px;
   border-radius: 8px;
   width: 400px;
@@ -743,14 +771,14 @@ body {
   background-color: #232323;
 }
 .portfolio__sections li.active {
-  background: -webkit-linear-gradient(#7F92D5, #BF7FD5);
+  background: -webkit-linear-gradient(#7f92d5, #bf7fd5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .portfolio__sections li.active::after {
   content: "";
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
   height: 4px;
   bottom: -6px;
 }
@@ -765,7 +793,7 @@ body {
   align-self: center;
 }
 .portfolio__dev__left h3 {
-  background: -webkit-linear-gradient(#7F92D5, #BF7FD5);
+  background: -webkit-linear-gradient(#7f92d5, #bf7fd5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -791,7 +819,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   color: transparent;
-  background: linear-gradient(138.86deg, #7F92D5 14.46%, #BF7FD5 102.17%);
+  background: linear-gradient(138.86deg, #7f92d5 14.46%, #bf7fd5 102.17%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -831,7 +859,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
   padding: 16px 8px;
   margin: 10px;
   cursor: pointer;
@@ -888,7 +916,7 @@ body {
     left: 0;
     height: 3px;
     width: 100%;
-    background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+    background: linear-gradient(45deg, #7f92d5, #bf7fd5);
   }
   .portfolio__dev__left__links a:first-child {
     font-size: 1.5rem;
@@ -932,7 +960,7 @@ body {
 }
 .footer {
   background: linear-gradient(45deg, #515151, #232323);
-  color: #FAFAFA;
+  color: #fafafa;
   padding: 0 100px;
 }
 .footer .footer-main {
@@ -967,7 +995,7 @@ body {
 .footer hr {
   border: none;
   height: 3px;
-  background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  background: linear-gradient(45deg, #7f92d5, #bf7fd5);
 }
 
 .footer__right__head {
@@ -979,7 +1007,7 @@ body {
 
 .footer__right__head h3 {
   text-transform: uppercase;
-  background: -webkit-linear-gradient(#7F92D5, #BF7FD5);
+  background: -webkit-linear-gradient(#7f92d5, #bf7fd5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -988,7 +1016,7 @@ body {
 }
 
 .footer__right p {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 form {
@@ -997,12 +1025,14 @@ form {
 form .floating {
   position: relative;
 }
-form input[type=text], form input[type=tel], form textarea {
+form input[type="text"],
+form input[type="tel"],
+form textarea {
   position: relative;
-  border: 2px solid #7F92D5;
+  border: 2px solid #7f92d5;
   background: transparent;
   border-radius: 6px;
-  color: #FAFAFA;
+  color: #fafafa;
   padding: 10px;
   font-family: "Inter";
   margin: 10px 0;
@@ -1012,7 +1042,7 @@ form input[type=text], form input[type=tel], form textarea {
 form textarea {
   resize: vertical;
 }
-form input[type=submit] {
+form input[type="submit"] {
   margin-top: 10px;
 }
 form label {
@@ -1027,7 +1057,7 @@ form label {
 }
 form input:focus,
 form textarea:focus {
-  border-color: #BF7FD5;
+  border-color: #bf7fd5;
   transition: 1s all ease-out;
   outline: none;
 }
@@ -1073,7 +1103,7 @@ form textarea:focus + label {
     display: none;
   }
 
-  input[type=submit] {
+  input[type="submit"] {
     margin: auto;
   }
 }
@@ -1110,7 +1140,7 @@ form textarea:focus + label {
   }
 
   .footer h2,
-.footer__right__head h3 {
+  .footer__right__head h3 {
     font-size: 2rem;
   }
 

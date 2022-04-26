@@ -1,116 +1,112 @@
-.hero{
-    @include linear-gradient($lighter-color, $dark-color);
-    color: $light-color;
-    height: 900px;
-    max-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    gap: 75px;
+.hero {
+  @include linear-gradient($lighter-color, $dark-color);
+  color: $light-color;
+  height: 900px;
+  max-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 75px;
 
+  &__title {
+    text-align: right;
+    width: max-content;
 
-    &__title{
-        text-align: right;
-        width: max-content;
+    & h1 {
+      @extend %main-title;
 
-        & h1{
-             @extend %main-title;
-    
-            & span {
-                font-weight: 300;
-            }
-        }
-
-        &__activity{
-            background-color: $light-color;
-            color: $dark-color;
-            font-family: 'Monument Extended';
-            font-weight: 300;
-            font-size: clamp(1rem,1.5vw,2rem);  
-            padding: 10px 24px;
-            float: right;
-            margin: 1rem 0;
-        }
+      & span {
+        font-weight: 300;
+      }
     }
 
-    &__portrait{
-
-        &__circle{
-            width: clamp(275px,30vw,600px);
-            height: clamp(275px,30vw,600px);
-            border-radius: 50%;
-            @include linear-gradient($primary-color, $secondary-color);
-            border: $light-color 5px solid;
-        }
-
+    &__activity {
+      background-color: $light-color;
+      color: $dark-color;
+      font-family: "Monument Extended";
+      font-weight: 300;
+      font-size: clamp(1rem, 1.5vw, 2rem);
+      padding: 10px 24px;
+      float: right;
+      margin: 1rem 0;
     }
+  }
 
-    &__mouse{
-        position: absolute;
-        bottom: 40px;
+  &__portrait {
+    &__circle {
+      width: clamp(275px, 30vw, 600px);
+      height: clamp(275px, 30vw, 600px);
+      border-radius: 50%;
+      @include linear-gradient($primary-color, $secondary-color);
+      border: $light-color 5px solid;
     }
+  }
 
-    #wheel{
-        animation: scroll 5s infinite ease-in-out;
-    }
+  &__mouse {
+    position: absolute;
+    bottom: 40px;
+  }
+
+  #wheel {
+    animation: scroll 5s infinite ease-in-out;
+  }
 }
 
 @keyframes scroll {
-    0%{
-        opacity: 0;
-        height: 0;
-    }
+  0% {
+    opacity: 0;
+    height: 0;
+  }
 
-    50%{
-        opacity: 1;
-        height: 15px;
-    }
+  50% {
+    opacity: 1;
+    height: 15px;
+  }
 
-    100%{
-        opacity: 0;
-        height: 0;
-    }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
 }
 
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding-top: 100px;
 
-@media screen and (max-width:1024px){
-    .hero{
-        flex-direction: column-reverse;
-        gap: 20px;
-        padding-top: 100px;
+    &__title {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
 
-        &__title{
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-
-            &__activity{
-                width: fit-content;
-                margin: 20px auto 20px;
-            }
-        }
+      &__activity {
+        width: fit-content;
+        margin: 20px auto 20px;
+      }
     }
+  }
 }
 
-@media screen and (max-width:768px){
-    .hero__title h1{
-        font-size: 1.7rem;
-    }
+@media screen and (max-width: 768px) {
+  .hero__title h1 {
+    font-size: 1.7rem;
+  }
 
-    .hero__title__activity{
-        font-size: .9rem;
-    }
+  .hero__title__activity {
+    font-size: 0.9rem;
+  }
 
-    .hero__mouse{
-        display: none;
-    }
+  .hero__mouse {
+    display: none;
+  }
 }
 
-@media screen and (max-width:375px){
-    .hero__title h1{
-        font-size: 1.3rem;
-    }
+@media screen and (max-width: 375px) {
+  .hero__title h1 {
+    font-size: 1.3rem;
+  }
 }
