@@ -54,3 +54,34 @@
 
     }
 }
+
+@media screen  and (max-width :960px){
+    .skills{
+        clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    }
+
+    .skills__container__items{
+        width: 270px;
+        padding-top: 30px;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 10px;
+
+        &__title{
+            font-size: 14px;
+            width: auto;
+            flex: 1;
+
+        }
+
+        & p{
+            display: none;
+        }
+
+        & img{
+            transform: scale(.8) translateY(-50px);
+        }
+    }
+}

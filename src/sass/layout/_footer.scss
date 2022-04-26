@@ -97,6 +97,10 @@ form {
         transition: 1 all ease-out;
     }
 
+    textarea{
+        resize: vertical;
+    }
+
     & input[type=submit]{
         @extend %btn;
     }
@@ -120,5 +124,5 @@ form {
      transition: 1 all ease-out;
      outline: none;
      
- }
+    }
 }
