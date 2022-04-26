@@ -383,6 +383,7 @@ body {
   .hero {
     flex-direction: column-reverse;
     gap: 20px;
+    padding-top: 100px;
   }
   .hero__title {
     text-align: center;
@@ -395,10 +396,6 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
-  .hero {
-    clip-path: ellipse(150% 75% at 50% 25%);
-  }
-
   .hero__title h1 {
     font-size: 1.7rem;
   }
@@ -688,7 +685,7 @@ body {
 
 @media screen and (max-width: 960px) {
   .skills {
-    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
   }
 
   .skills__container__items {
@@ -715,7 +712,7 @@ body {
 .portfolio {
   padding: 50px 100px;
   max-width: 1500px;
-  margin: 50px auto 100px auto;
+  margin: 0 auto 100px auto;
 }
 .portfolio__title {
   text-align: center;
@@ -855,6 +852,11 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .portfolio {
+    margin-top: 0;
+    padding: 75px 50px 0 50px;
+  }
+
   .portfolio__dev {
     flex-direction: column-reverse;
   }
@@ -862,14 +864,70 @@ body {
     margin: 40px 0 0 0;
     text-align: center;
   }
+  .portfolio__dev__left p {
+    text-align: center;
+  }
   .portfolio__dev__left__arrows {
     display: none;
+  }
+  .portfolio__dev__left__links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .portfolio__dev__left__links a {
+    position: relative;
+  }
+  .portfolio__dev__left__links a svg {
+    display: none;
+  }
+  .portfolio__dev__left__links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(45deg, #7F92D5, #BF7FD5);
+  }
+  .portfolio__dev__left__links a:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .portfolio__dev__photo {
+    width: 20em;
+    height: 20em;
+    margin-top: 30px;
   }
   .portfolio__dev__photo::after {
     display: none;
   }
   .portfolio__dev__photo img {
     opacity: 1;
+  }
+
+  .portfolio__sections {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .portfolio {
+    padding: 75px 30px 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .portfolio__dev__left p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .portfolio__title {
+    font-size: 1.5rem;
+  }
+
+  .portfolio__dev__photo {
+    width: 17em;
+    height: 17em;
   }
 }
 .footer {
@@ -915,7 +973,7 @@ body {
 .footer__right__head {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 14px;
 }
 
@@ -954,21 +1012,111 @@ form input[type=text], form input[type=tel], form textarea {
 form textarea {
   resize: vertical;
 }
+form input[type=submit] {
+  margin-top: 10px;
+}
 form label {
   position: absolute;
   font-family: "Inter";
   font-style: italic;
   padding: 10px;
   top: 10px;
-  left: -100px;
-  text-align: right;
+  left: 0;
   width: 100px;
+  transition: left 0.2s ease-in-out;
 }
 form input:focus,
 form textarea:focus {
   border-color: #BF7FD5;
-  transition: 1 all ease-out;
+  transition: 1s all ease-out;
   outline: none;
+}
+form input:focus + label,
+form textarea:focus + label {
+  left: 75%;
+  text-align: right;
+  transition: all 0.2s ease-in-out;
+}
+form textarea:focus + label {
+  display: none;
+}
+
+.mobile-icon {
+  display: none;
+}
+
+@media screen and (max-width: 1224px) {
+  .footer {
+    padding: 0 50px;
+  }
+
+  .footer-main {
+    flex-direction: column-reverse;
+  }
+
+  .footer .footer-main {
+    padding-bottom: 50px;
+  }
+
+  .footer .footer-main .footer__right {
+    max-width: none;
+    margin-bottom: 50px;
+  }
+
+  .footer__left {
+    width: 100%;
+  }
+  .footer__left form {
+    width: 100%;
+  }
+  .footer__left form input:focus + label {
+    display: none;
+  }
+
+  input[type=submit] {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 960px) {
+  .footer__creds {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer__creds p {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mobile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footer {
+    padding: 0 30px;
+  }
+
+  .footer__right p {
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .footer h2,
+.footer__right__head h3 {
+    font-size: 2rem;
+  }
+
+  .footer__creds p {
+    font-size: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

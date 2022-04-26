@@ -80,6 +80,7 @@
     .hero{
         flex-direction: column-reverse;
         gap: 20px;
+        padding-top: 100px;
 
         &__title{
             text-align: center;
@@ -95,9 +96,6 @@
 }
 
 @media screen and (max-width:768px){
-    .hero{
-        clip-path:ellipse(150% 75% at 50% 25%);
-    }
     .hero__title h1{
         font-size: 1.7rem;
     }
